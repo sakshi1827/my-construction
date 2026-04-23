@@ -1,0 +1,18 @@
+directories:
+  output: dist
+  buildResources: assets
+files:
+  - filter:
+      - build/**/*
+      - build/**/*
+      - backend/**/*
+      - electron/**/*
+      - package.json
+extraMetadata:
+  main: build/electron.js
+appId: com.myconstruction.app
+productName: My Construction App
+win:
+  target: nsis
+extends: react-cra
+electronVersion: 40.6.1

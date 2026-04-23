@@ -1,0 +1,52 @@
+const express = require("express");
+const cors = require("cors");
+
+const app = express();
+
+
+require("./db/database");
+
+
+app.use(cors({
+  origin: "http://localhost:3000",
+  credentials: true
+}));
+
+app.use(express.json());
+
+
+app.get("/", (req, res) => {
+  res.json({ message: "API Running " });
+});
+
+// ================= ROUTES
+const workers = require("./routes/workers");
+const projects = require("./routes/projects");
+const clients = require("./routes/clients");
+const users = require("./routes/users");
+const attendance = require("./routes/attendance");
+const expenses = require("./routes/expenses");
+const materials = require("./routes/material");
+const payments = require("./routes/payments");
+//const reports = require("./routes/report");
+
+// ================= USE ROUTES
+app.use("/api/workers", workers);
+app.use("/api/projects", projects);
+app.use("/api/clients", clients);
+app.use("/api/users", users);
+app.use("/api/attendance", attendance);
+app.use("/api/expenses", expenses);
+app.use("/api/materials", materials);
+app.use("/api/payments", payments);
+//app.use("/api/report", reports);
+
+//app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+
+
+const PORT = process.env.PORT || 5000;
+
+app.listen(PORT, () => {
+  console.log(`Server running on port ${PORT}`);
+});
