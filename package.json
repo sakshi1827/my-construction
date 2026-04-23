@@ -24,7 +24,8 @@
     "react-scripts": "5.0.1",
     "sqlite3": "^5.1.7",
     "wait-on": "^9.0.4",
-    "web-vitals": "^2.1.4"
+    "web-vitals": "^2.1.4",
+    "yaml": "^2.8.3"
   },
   "devDependencies": {
     "autoprefixer": "^10.4.27",
