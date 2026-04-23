@@ -19,9 +19,9 @@ app.use(express.json());
 router.get("/", (req, res) => {
   res.send("Material API working ✅");
 });
-/*app.get("/", (req, res) => {
-  res.json({ message: "API Running " });
-});*/
+app.get("/", (req, res) => {
+  res.send("Backend is running ✅");
+});
 
 // ================= ROUTES
 const workers = require("./routes/workers");
