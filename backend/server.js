@@ -8,9 +8,11 @@ const app = express();
 require("./db/database");
 
 
+
+
 app.use(cors({
-  origin: "http://localhost:3000",
-  credentials: true
+  origin: "*",
+  methods: ["GET", "POST", "PUT", "DELETE"],
 }));
 
 app.use(express.json());
