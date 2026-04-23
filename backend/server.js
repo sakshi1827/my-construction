@@ -26,9 +26,9 @@ const clients = require("./routes/clients");
 const users = require("./routes/users");
 const attendance = require("./routes/attendance");
 const expenses = require("./routes/expenses");
-const materials = require("./routes/material");
+const material = require("./routes/material");
 const payments = require("./routes/payments");
-//const reports = require("./routes/report");
+const reports = require("./routes/report");
 
 // ================= USE ROUTES
 app.use("/api/workers", workers);
@@ -37,16 +37,16 @@ app.use("/api/clients", clients);
 app.use("/api/users", users);
 app.use("/api/attendance", attendance);
 app.use("/api/expenses", expenses);
-app.use("/api/materials", materials);
+app.use("/api/material", material);
 app.use("/api/payments", payments);
-//app.use("/api/report", reports);
+app.use("/api/report", reports);
 
-//app.use(express.json());
+app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 
-const PORT = process.env.PORT || 3000;
+const PORT = 5000;
 
-app.listen(PORT, "0.0.0.0", () => {
-  console.log("Server running on port", PORT);
+app.listen(PORT, () => {
+  console.log(` Server running on http://localhost:${PORT}`);
 });
