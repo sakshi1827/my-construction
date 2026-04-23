@@ -41,13 +41,13 @@ export default function MaterialExpenseManagement() {
   }, []);
 
   const fetchMaterials = async () => {
-    const res = await fetch("http://localhost:5000/api/materials");
+    const res = await fetch("https://my-construction-3-8pua.onrender.com/api/materials");
     const data = await res.json();
     setMaterials(data || []);
   };
 
   const fetchExpenses = async () => {
-    const res = await fetch("http://localhost:5000/api/expenses");
+    const res = await fetch("https://my-construction-3-8pua.onrender.com/api/expenses");
     const data = await res.json();
     setExpenses(data || []);
   };
@@ -98,7 +98,7 @@ export default function MaterialExpenseManagement() {
   const addMaterial = async (e) => {
     e.preventDefault();
 
-    await fetch("http://localhost:5000/api/materials", {
+    await fetch("https://my-construction-3-8pua.onrender.com/api/materials", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(materialForm)
@@ -111,7 +111,7 @@ export default function MaterialExpenseManagement() {
   const addExpense = async (e) => {
     e.preventDefault();
 
-    await fetch("http://localhost:5000/api/expenses", {
+    await fetch("https://my-construction-3-8pua.onrender.com/api/expenses", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(expenseForm)
